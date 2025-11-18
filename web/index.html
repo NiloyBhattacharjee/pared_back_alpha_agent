@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <section id="login" class="view active">
+      <div class="card login-card">
+        <div class="logo">💬</div>
+        <h1>Log In</h1>
+        <form id="login-form">
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="email" placeholder="you@example.com" required />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" id="password" placeholder="••••••••" required />
+          </label>
+          <button type="submit" class="primary">Log In</button>
+          <a class="link" href="#" id="forgot">Forgot password?</a>
+        </form>
+      </div>
+    </section>
+
+    <section id="chat" class="view">
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="user-block">
+            <div class="avatar large">JM</div>
+            <div>
+              <div class="name">John Martinez</div>
+              <div class="status online">Online</div>
+            </div>
+          </div>
+          <div class="chats" id="chat-list">
+            <!-- Chat items injected here -->
+          </div>
+          <div class="sidebar-footer">
+            <button class="ghost" data-action="settings">⚙️ Settings</button>
+            <button class="ghost" data-action="profile" id="open-profile">👤 Profile</button>
+          </div>
+        </aside>
+        <main class="chat-panel">
+          <header class="chat-header">
+            <button class="icon back" id="back-button">←</button>
+            <div>
+              <div class="name" id="chat-name">General Chat</div>
+              <div class="status online" id="chat-status">Active now</div>
+            </div>
+            <button class="icon">⋮</button>
+          </header>
+          <div class="messages" id="message-list">
+            <!-- Messages injected here -->
+          </div>
+          <form class="message-input" id="message-form">
+            <button type="button" class="icon">😊</button>
+            <button type="button" class="icon">📎</button>
+            <input type="text" id="message-text" placeholder="Type your message..." autocomplete="off" />
+            <button type="submit" class="primary">Send ▶</button>
+          </form>
+        </main>
+      </div>
+    </section>
+
+    <section id="profile" class="view">
+      <div class="profile-card">
+        <button class="icon back" id="back-to-chat">← Back to chat</button>
+        <h1>User Profile</h1>
+        <div class="profile-header">
+          <div class="avatar huge">JM</div>
+          <div>
+            <div class="name">John Martinez</div>
+            <div class="status online">Online</div>
+            <button class="ghost small" id="change-photo">Change photo</button>
+          </div>
+        </div>
+        <form id="profile-form" class="profile-form">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" id="profile-name" value="John Martinez" />
+          </label>
+          <label class="field">
+            <span>Email (read-only)</span>
+            <input type="email" value="john@example.com" disabled />
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="profile-status">
+              <option>Online</option>
+              <option>Away</option>
+              <option>Do Not Disturb</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>About</span>
+            <textarea id="profile-about">Enthusiastic developer, loves working with chatbots.</textarea>
+          </label>
+          <div class="preferences">
+            <label class="toggle">
+              <input type="checkbox" id="pref-dark" checked />
+              <span>Dark Mode</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="pref-notify" checked />
+              <span>Notifications</span>
+            </label>
+          </div>
+          <div class="profile-actions">
+            <button type="button" class="ghost" id="cancel-profile">Cancel</button>
+            <button type="submit" class="primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

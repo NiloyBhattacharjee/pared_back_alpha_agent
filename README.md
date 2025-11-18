@@ -427,6 +427,19 @@ Performance:
   - Data loader produces forward dates after `as_of` when a tiny cache exists.
   - Cumulative product math verified on simple series.
 
+## Chat UI Prototype (static, runnable)
+
+A lightweight, dependency-free prototype of the login → chat → profile flow lives in `web/`.
+
+**How to run**
+
+- Open `web/index.html` directly in your browser, or serve the folder locally (e.g., `python -m http.server 8000` from the repo root and navigate to `http://localhost:8000/web/`).
+- The prototype includes:
+  - Login card with email/password and a stubbed “Forgot password?” link.
+  - Chat workspace with sidebar conversations, active chat header, message list, and composer.
+  - Profile page with editable fields, preference toggles, and a “Back to chat” action.
+  - Mobile-friendly tweaks (sidebar collapses, back button appears) for narrow screens.
+
 ### Test Principles Used
 - Determinism: synthetic data uses fixed seeds; pandas operations use explicit sorting.
 - Leakage safety: all agent tests filter to `date <= as_of`.
